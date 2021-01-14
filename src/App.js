@@ -22,7 +22,6 @@ class App extends React.Component{
       description:"",
       error:false
     };
-    this.getWeather();
 
     this.weatherIcon = {
       thunderstorm:" wi-thunderstorm",
@@ -69,7 +68,10 @@ class App extends React.Component{
 
     }
   }
-  getWeather = async ()=>{
+  getWeather = async (e)=>{
+
+    e.preventDefault();
+    
     const api_call = await fetch(
       `http://api.openweathermap.org/data/2.5/weather?q=London,UK &appid=${API_key} `
     )
@@ -96,7 +98,7 @@ class App extends React.Component{
 render(){
   return (
     <div className="App">
-      <Form/>
+      <Form loadWeather={this.getWeather}/>
       <Weather city={this.state.city}
        country={this.state.country}
        temp_celsius={this.state.celsius}
