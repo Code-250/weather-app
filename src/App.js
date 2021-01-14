@@ -30,7 +30,7 @@ class App extends React.Component{
       Atmosphere:"wi-fog",
       Clear:"wi-day-sunny",
       Clouds:"wi-day-fog",
-     
+      Rain:"wi-storm-showers"
     }
   }
 
