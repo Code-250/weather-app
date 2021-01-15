@@ -3,6 +3,9 @@ import "./form.css"
 const Form = props =>{
     return(
         <div className="container">
+            <div>
+                {props.error ? error() : null}
+            </div>
             <form onSubmit={props.loadWeather}>
             <div className="row">
                 <div className="col-md-3 offset-md-2">
@@ -29,4 +32,11 @@ const Form = props =>{
     )
 }
 
+function error(){
+    return(
+        <div className="alert alert-danger mx-5">
+            Enter City and Counrty you want their weather from
+        </div>
+    )
+}
 export default Form;
